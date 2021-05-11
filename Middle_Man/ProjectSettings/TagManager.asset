@@ -7,6 +7,7 @@ TagManager:
   - end
   - catch
   - destination
+  - cubeReset
   layers:
   - Default
   - TransparentFX
