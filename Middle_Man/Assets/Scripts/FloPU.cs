@@ -40,7 +40,7 @@ public class FloPU : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("floatReset"))
+        if (other.CompareTag("cubeReset"))
         {
             move = 1;
             ResetMe();
@@ -49,7 +49,7 @@ public class FloPU : MonoBehaviour
 
         if (other.CompareTag("destination"))
         {
-            if (move == 0)
+            if (move == 0 && !other.CompareTag("cubeReset"))
             {
                 pickUp();
                 GetComponent<Renderer>().material = FloatFade;
@@ -65,7 +65,7 @@ public class FloPU : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("floatReset"))
+        if (other.CompareTag("cubeReset"))
         {
             move = 1;
             ResetMe();
@@ -74,7 +74,7 @@ public class FloPU : MonoBehaviour
 
         if (other.CompareTag("destination"))
         {
-            if (move == 0)
+            if (move == 0 && !other.CompareTag("cubeReset"))
             {
                 pickUp();
                 

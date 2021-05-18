@@ -60,6 +60,10 @@ public class cubeReset : MonoBehaviour
             {
                 this.transform.position = new Vector3(9.56f, 1.95f, -74.6f);
             }
+            else if (scene.buildIndex == 10)
+            {
+                this.transform.position = new Vector3(-23.8f, 1.6f, -73.26f);
+            }
         }
     }
 
