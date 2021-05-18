@@ -12,6 +12,7 @@ public class FloPU : MonoBehaviour
 
     void Update()
     {
+
         if (move == 1)
         {
             disOwn();
@@ -39,6 +40,13 @@ public class FloPU : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("floatReset"))
+        {
+            move = 1;
+            ResetMe();
+            disOwn();
+        }
+
         if (other.CompareTag("destination"))
         {
             if (move == 0)
@@ -57,7 +65,13 @@ public class FloPU : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("floatReset"))
+        {
+            move = 1;
+            ResetMe();
+            disOwn();
+        }
+
         if (other.CompareTag("destination"))
         {
             if (move == 0)
@@ -89,12 +103,6 @@ public class FloPU : MonoBehaviour
     }
 
 
-    //void OnMouseDown()
-    //{
-    ///    this.transform.position = destination.position;
-    //    this.transform.parent = GameObject.Find("Destination").transform;
-    //}
-
     void OnMouseUp()
     {
         disOwn();
@@ -110,5 +118,9 @@ public class FloPU : MonoBehaviour
         }
 
     }
-    
+
+    void ResetMe()
+    {
+        this.transform.position = new Vector3(500, 500, 500);
+    }
 }

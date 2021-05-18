@@ -9,6 +9,7 @@ TagManager:
   - destination
   - cubeReset
   - floatReset
+  - music
   layers:
   - Default
   - TransparentFX

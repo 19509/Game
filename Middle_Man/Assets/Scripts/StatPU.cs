@@ -19,6 +19,7 @@ public class StatPU : MonoBehaviour
 
     void Update()
     {
+        
         if (move == 1)
         {
             disOwn();
@@ -46,9 +47,16 @@ public class StatPU : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        if (other.CompareTag("cubeReset"))
+        {
+            move = 1;
+            ResetMe();
+            disOwn();
+        }
+
         if (other.CompareTag("destination"))
         {
-            if (move == 0)
+            if (move == 0 && !other.CompareTag("cubeReset"))
             {
                 pickUp();
                 GetComponent<Renderer>().material = matFade;
@@ -65,10 +73,17 @@ public class StatPU : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("cubeReset"))
+        {
+            move = 1;
+            ResetMe();
+            disOwn();
+
+        }
 
         if (other.CompareTag("destination"))
         {
-            if (move == 0)
+            if (move == 0 && !other.CompareTag("cubeReset"))
             {
                 pickUp();
 
@@ -100,16 +115,15 @@ public class StatPU : MonoBehaviour
     }
 
 
-    //void OnMouseDown()
-    //{
-    ///    this.transform.position = destination.position;
-    //    this.transform.parent = GameObject.Find("Destination").transform;
-    //}
-
     void OnMouseUp()
     {
         disOwn();
 
+    }
+
+    void ResetMe()
+    {
+        this.transform.position = new Vector3(500, 500, 500);
     }
 
     

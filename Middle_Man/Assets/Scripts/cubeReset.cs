@@ -31,6 +31,10 @@ public class cubeReset : MonoBehaviour
             {
                 this.transform.position = new Vector3(14.46f, 65.3f, 77.17f);
             }
+            else if (scene.buildIndex == 9)
+            {
+                this.transform.position = new Vector3(9.56f, 1.95f, -74.6f);
+            }
         }
     }
 
@@ -52,9 +56,15 @@ public class cubeReset : MonoBehaviour
             {
                 this.transform.position = new Vector3(14.46f, 65.3f, 77.17f);
             }
+            else if (scene.buildIndex == 9)
+            {
+                this.transform.position = new Vector3(9.56f, 1.95f, -74.6f);
+            }
         }
     }
 
     
+
+
 }
 
