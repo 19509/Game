@@ -7,6 +7,6 @@ public class BackHome : MonoBehaviour
 {
     public void ReturnHome()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
